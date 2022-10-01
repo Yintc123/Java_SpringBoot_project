@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, min-height=device-height'>
+		<title>Spring boot demo</title>
+		<!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">  
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+        <nav class="navbar bg-dark navbar-dark p-3 navbar-expand-lg">
+            <div class="container">
+                <a href="/" class="navbar-brand">Home</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                 aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                    	<li class="nav-item">
+                            <a href="/register" class="nav-link" id="register_button">登入/註冊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">介紹</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">內容</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="p-5 text-center border-bottom">
+            <h1>個人專案</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead m-4">
+                    個人專案皆使用 Python 的 Flask 作為 Web framework 並以 Docker 佈署於 AWS 的 EC2，
+                    此網頁是由 Java 的 Spring boot 作為 Web framework。
+                </p>
+                <!--<button class="btn btn-primary btn-lg">More</button>-->
+            </div>
+        </div>
+
+        <div class="p5">
+            <div class="container">
+                <div class="row g-4 mt-5 mb-5">
+                    <div class="col-lg">
+                        <div class="card shadow-lg">
+                            <img src="stock_web.png" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="card-title">Stock_Project</h3>
+                                <p class="card-text mx-auto">
+                                	<p>1. Utilized service worker to send Webpush while reaching the target price.</p>
+                                	<p>2. Utilized SMTP to send email while reaching the target price.</p>
+                                	<p>3. Obtained the historical data of the stocks with the SDK of FinMind</p>
+                                	<p class="stock_hide">4. Obtained the real time data of the stocks with the SDK of twstock</p>
+                                	<p class="stock_hide">5. Displayed the price time and volume time graph with the SDK of TradingView.</p>
+                                	<p class="stock_hide">6. Stored the information of stocks, members, messages in the AWS RDS.</p>
+                                	<p class="stock_hide">7. Decreased the loading time by 80% with CDN.</p>
+                                </p>
+                                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+								  <button class="btn btn-primary" id="stock_button" type="button">More...</button>
+								</div>
+								<div class="col-6 mx-auto text-center">
+	                                <a href="https://yin888.info/" class="card-link" target="_blank">Stock_project</ahref>
+	                                <a href="https://github.com/Yintc123/stock_project" class="card-link" target="_blank">GitHub</a>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="card shadow-lg">
+                            <img src="tour_web.png" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="card-title">Taipei Day Trip Website</h3>
+                                <p class="card-text mx-auto">
+                                	<p>1. Utilized Blueprint to manage the APIs.</p>
+                                	<p>2. Stored the information of attractions, members, orders in MySQL.</p>
+                                	<p>3. Established a payment flow with the API of TapPay</p>
+                                	<p class="tour_hide">4. Kept the information of sign in with JWT to keep the member status and decrease the consumption of requesting the database.</p>
+                                </p>
+                                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+								  <button class="btn btn-primary" id="tour_button" type="button">More...</button>
+								</div>
+								<div class="col-6 mx-auto text-center">
+	                                <a href="https://tour.yin888.info/" class="card-link" target="_blank">Tour_project</ahref>
+	                                <a href="https://github.com/Yintc123/taipei-day-trip-website" class="card-link" target="_blank">GitHub</a>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="card shadow-lg">
+                            <img src="MB_web.png" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="card-title">Message Board</h3>
+                                <p class="card-text mx-auto">
+                                	<p>1. Stored the information of messages in AWS RDS.</p>
+                                	<p>2. Stored the pictures in AWS S3 and AWS CloudFront.</p>
+                                	<p>3. Utilized AWS Load Balancer to distribute the web requests for reducing the burden of server.</p>
+                                	<p class="mb_hide">4. Utilized the website, Loader.io, for testing the loading of server.</p>
+                                </p>
+                                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+								  <button class="btn btn-primary" id="mb_button" type="button">More...</button>
+								</div>
+								<div class="col-6 mx-auto text-center">
+	                                <a href="https://message-board.yin888.info/" class="card-link" target="_blank">Message_project</ahref>
+	                                <a href="https://github.com/Yintc123/message_board" class="card-link" target="_blank">GitHub</a>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="p4 border-top">
+            <div class="container align-items-center justify-content-between d-flex">
+                <p class="mb-0 text-muted">
+                    &copy: 2022 Yin
+                </p>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-muted">關於本站</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+		
+		<script src="index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	</body>
+</html>

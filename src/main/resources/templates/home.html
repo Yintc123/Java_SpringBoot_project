@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th=”http://www.thymeleaf.org"">
+	<head>
+		<meta charset='utf-8'/>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, min-height=device-height'>
+		<title>Spring boot demo</title>
+		<script>
+			console.log("hell spring boot");
+		</script>
+	</head>
+	<body>
+		<h1>spring boot with STS4</h1>
+		<p th:text="${message}"></p>
+		<br/>
+		<h1>Home.html</h1>
+		<div>
+			<a href="Hello">sayHello</a>
+		</div>
+		<div>
+			<a href="/">index</a>
+		</div>
+		<div>
+			<a href="/rest">rest</a>
+		</div>
+	</body>
+</html>
