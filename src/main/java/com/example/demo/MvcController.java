@@ -22,6 +22,13 @@ public class MvcController {
 		return mav;
 	}
 	
+	@RequestMapping("/login")
+	public ModelAndView login() {
+		ModelAndView mav=new ModelAndView("login");
+		System.out.println("login got called");
+		return mav;
+	}
+	
 	@RequestMapping("/Hello")
 	public ModelAndView sayHello() {
 		ModelAndView mav=new ModelAndView("home");

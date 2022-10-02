@@ -5,26 +5,27 @@ let submit_button=document.querySelector("#submit_button");
 let switch_button=document.querySelector("#switch_button");
 
 submit_button.addEventListener("click", ()=>{
-	let input_name=document.querySelector("#exampleInputName");
 	let input_account=document.querySelector("#exampleInputEmail1");
 	let input_password=document.querySelector("#exampleInputPassword1");
 	console.log(input_account.value);
 	console.log(input_password.value);
-	member.sign_up(input_name.value, input_account.value, input_password.value).then(resp => {
+	member.sign_in(input_account.value, input_password.value).then(resp => {
 		console.log(resp);
-		if (resp.error){
+		if(resp.error){
 			let email_message=document.querySelector("#email_message");
 			email_message.textContent=resp.error;
 			email_message.style.display="block";
 			return;
 		}
-		location.href="http://localhost:5050/login";
+		let email_message=document.querySelector("#email_message");
+		email_message.textContent="登入成功";
+		email_message.style.display="block";
 	})
 })
 
 switch_button.addEventListener("click", ()=>{
 	console.log("switch!");
-	location.href="http://localhost:5050/login";
+	location.href="http://localhost:5050/register";
 })
 
 let patch_button=document.querySelector("#patch");
