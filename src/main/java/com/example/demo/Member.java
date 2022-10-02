@@ -1,5 +1,6 @@
 package com.example.demo;
 
+@Entity
 public class Member {
 	private Long id;
 	private String name;

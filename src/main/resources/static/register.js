@@ -13,3 +13,18 @@ submit_button.addEventListener("click", ()=>{
 	})
 })
 
+let patch_button=document.querySelector("#patch");
+let delete_button=document.querySelector("#delete");
+
+patch_button.addEventListener("click", ()=>{
+	member.patch_test().then(resp=>{
+		console.log(resp);
+	})
+})
+
+delete_button.addEventListener("click", ()=>{
+	member.delete_test().then(resp=>{
+		console.log(resp);
+	})
+})
+

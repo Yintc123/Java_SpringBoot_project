@@ -4,7 +4,9 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,4 +44,32 @@ public class WebserviceController {
 		user.setPassword("test");
         return user;
 	}
+	
+	@PatchMapping("/member")
+	public Member patchMember(@RequestParam String account, @RequestParam String password) {
+		Member user = new Member();
+		System.out.println("patch method");
+		System.out.println(account);
+		System.out.println(password);
+		user.setName("yin");
+		user.setEmail("patch");
+		user.setId((long) 202);
+		user.setPassword("patch_test");
+        return user;
+	}
+	
+	@DeleteMapping("/member")
+	public Member deleteMember(@RequestParam String account, @RequestParam String password) {
+		Member user = new Member();
+		System.out.println("delete method");
+		System.out.println(account);
+		System.out.println(password);
+		user.setName("yin");
+		user.setEmail("delete");
+		user.setId((long) 400);
+		user.setPassword("del_test");
+        return user;
+	}
+	
+	
 }
