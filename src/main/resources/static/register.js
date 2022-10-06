@@ -14,7 +14,7 @@ submit_button.addEventListener("click", ()=>{
 		console.log(resp);
 		if (resp.error){
 			let email_message=document.querySelector("#email_message");
-			email_message.textContent=resp.error;
+			email_message.textContent=resp.message;
 			email_message.style.display="block";
 			return;
 		}
@@ -30,15 +30,15 @@ switch_button.addEventListener("click", ()=>{
 let patch_button=document.querySelector("#patch");
 let delete_button=document.querySelector("#delete");
 
-patch_button.addEventListener("click", ()=>{
-	member.patch_test().then(resp=>{
-		console.log(resp);
-	})
-})
-
-delete_button.addEventListener("click", ()=>{
-	member.delete_test().then(resp=>{
-		console.log(resp);
-	})
-})
+//patch_button.addEventListener("click", ()=>{
+//	member.patch_test().then(resp=>{
+//		console.log(resp);
+//	})
+//})
+//
+//delete_button.addEventListener("click", ()=>{
+//	member.delete_test().then(resp=>{
+//		console.log(resp);
+//	})
+//})
 

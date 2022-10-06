@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="https://www.thymeleaf.org" 
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, scale-initial=1.0, min-height=device-height"/>
@@ -37,33 +39,36 @@
 		
 		<div class="p5">
             <div class="container col-6 mt-5 mb-5 border border-1">
-            	<form>
+            	<form th:action="@{/login}" method="post">
 				  <div class="mb-3">
 				    <label for="exampleInputEmail1" class="form-label">Email address</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
 				    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				  </div>
 				  <div class="mb-3">
 				    <label for="exampleInputPassword1" class="form-label">Password</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1">
-				  </div>
-				  <div class="mb-3 form-check">
-				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+				    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
 				  </div>
 				  
 				  <div id="email_message" class="form-text text-danger fw-bold  mb-3">Email was registered</div>
 				  
-				  <button class="btn btn-primary" id="submit_button" type="button">Submit</button>
+				  <button class="btn btn-primary" id="submit_button" type="submit" value="login">Submit</button>
 				  <button type="button" class="btn btn-outline-primary" id="switch_button">註冊</button>
 				</form>
             </div>
         </div>
         
-		
+        <div align="center" th:if="${param.error}">
+        	Invalid username or password
+        </div>
+        <div align="center" th:if="${param.error}">
+        	<h4 style="color:red;">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</h4>
+        </div>
+        
+		<!--
 		<button type="button" class="btn btn-outline-primary" id="patch">Patch</button>
 		<button type="button" class="btn btn-outline-primary" id="delete">delete</button>
-		
+		-->
 		<footer class="p4 border-top">
             <div class="container align-items-center justify-content-between d-flex">
                 <p class="mb-0 text-muted">
