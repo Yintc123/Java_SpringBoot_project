@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+// 負責資料處理的業務邏輯層
 @Service
 public class MemberService {
 	
+	// 將元件注入到需要的類別
 	@Autowired
 	MemberRepo repo;
 	

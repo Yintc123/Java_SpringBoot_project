@@ -21,7 +21,7 @@ public class MemberUserDetails implements UserDetails {
 
 		List<GrantedAuthority> authorities=new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(user.getRole().toString())); //使用者權限設定
-		
+		// user.getRole().toString()，將enum定義的變數轉為字串
 		return authorities;
 	}
 

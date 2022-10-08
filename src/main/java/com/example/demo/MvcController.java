@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=ErwPP7xLwDY
+
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,7 @@ public class MvcController {
 	public ModelAndView index() {
 		ModelAndView mav=new ModelAndView("index");
 		mav.addObject("message", "Greeting message from controller");
-		System.out.println("sayHello got called");
+		System.out.println("index got called");
 		return mav;
 	}
 	
@@ -30,11 +32,11 @@ public class MvcController {
 		return mav;
 	}
 	
-	@RequestMapping("/Hello")
-	public ModelAndView sayHello() {
-		ModelAndView mav=new ModelAndView("home");
-		mav.addObject("message", "Greeting message from controller");
-		System.out.println("sayHello got called");
-		return mav;
-	}
+//	@RequestMapping("/Hello")
+//	public ModelAndView sayHello() {
+//		ModelAndView mav=new ModelAndView("home");
+//		mav.addObject("message", "Greeting message from controller");
+//		System.out.println("sayHello got called");
+//		return mav;
+//	}
 }

@@ -30,15 +30,16 @@ import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
 
 //若要自定義登入邏輯需繼承WebSecurityConfiguration
-@Configuration
-@EnableWebSecurity
-@Order(1)
+@Configuration // 專門讀取環境參數的類別
+@EnableWebSecurity // 啟用Spring Security所需的各項配置
+@Order(1) // 設定spring boot容器加載的順序
 public class SecurityConfig {
 	
+	// 將回傳的method建立成元件
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-			.csrf().disable()
+			.csrf().disable() // 跨站請求偽造 (Cross-site request forgery)，利用cookie帶的使用者使用者狀態攻擊
 			.authorizeRequests()
 				.antMatchers(HttpMethod.GET, "/").authenticated()
 				.antMatchers(HttpMethod.GET).permitAll()
@@ -69,6 +70,7 @@ public class SecurityConfig {
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
+//		return new BCryptPasswordEncoder();
 	}
 	
 }

@@ -9,12 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//
 @Entity // 以class名稱創一張表
 @Table(name="members")
 public class Member {
 	@Id // 主鍵 (Primary Key)
 	@GeneratedValue( strategy = GenerationType.IDENTITY) // id編號自動增加 (auto_increment)
 	private Long id;
+	
+	@Column(nullable=false, length=40)
 	private String name;
 	
 	@Column(unique=true, nullable=false, length=40)

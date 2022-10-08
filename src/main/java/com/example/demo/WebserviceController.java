@@ -28,10 +28,10 @@ public class WebserviceController {
 	@Autowired
 	MemberService MemberService;
 	
-	@GetMapping("/rest")
-	public String restHello() {
-		return "Hello rest";
-	}
+//	@GetMapping("/rest")
+//	public String restHello() {
+//		return "Hello rest";
+//	}
 	
 	@PostMapping("/member")
 	public ResponseEntity<Map<String, String>> member(@ModelAttribute MemberQueryParameter parameter) {
