@@ -1,0 +1,32 @@
+version: "3"
+services:
+  springboot:
+    image: springboot
+    restart: always
+    build: .
+    ports:
+      - 5050:5050
+    networks:
+      - springboot-mysql
+    depends_on:
+      - mysqldb
+    environment:
+      DB_HOST: mysqldb
+      DB_NAME: spring_boot
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_port: 3306
+    
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8
+    ports:
+      - 3307:3306
+    networks:
+      - springboot-mysql
+    environment:
+      MYSQL_DATABASE: spring_boot
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+networks:
+  springboot-mysql:
