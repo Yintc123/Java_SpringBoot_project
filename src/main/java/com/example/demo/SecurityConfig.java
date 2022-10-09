@@ -48,7 +48,7 @@ public class SecurityConfig {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("/login").permitAll()
+				.loginPage("https://springbootpractice.yin888.info/login").permitAll()
 				.usernameParameter("email")
 				.loginProcessingUrl("/login")
 				.defaultSuccessUrl("/")
@@ -56,7 +56,7 @@ public class SecurityConfig {
 				.and()
 			.logout()
 				.logoutUrl("/logout")
-				.logoutSuccessUrl("/login")
+				.logoutSuccessUrl("https://springbootpractice.yin888.info/login")
 				.permitAll();
 		
 	        return https.build();
