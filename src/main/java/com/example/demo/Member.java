@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 //
 @Entity // 以class名稱創一張表
-@Table(name="members")
+@Table(name="sp_members")
 public class Member {
 	@Id // 主鍵 (Primary Key)
 	@GeneratedValue( strategy = GenerationType.IDENTITY) // id編號自動增加 (auto_increment)

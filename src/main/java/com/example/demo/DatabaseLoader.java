@@ -15,15 +15,15 @@ public class DatabaseLoader {
 		this.repo=repo;
 	}
 	
-	@Bean
-	public CommandLineRunner initializeDatabase() {
-		return args -> {
-			Member user1=new Member("test", "123@123", "123", Role.ADIMIN);
-			Member user2=new Member("hello", "456@456", "456", Role.ADIMIN);
-			Member user3=new Member("Lin", "qaz@qaz", "qaz", Role.ADIMIN);
-			
-			repo.saveAll(List.of(user1, user2, user3));
-			System.out.println("Database initialized");
-		};
-	}
+//	@Bean
+//	public CommandLineRunner initializeDatabase() {
+//		return args -> {
+//			Member user1=new Member("test", "123@123", "123", Role.ADIMIN);
+//			Member user2=new Member("hello", "456@456", "456", Role.ADIMIN);
+//			Member user3=new Member("Lin", "qaz@qaz", "qaz", Role.ADIMIN);
+//			
+//			repo.saveAll(List.of(user1, user2, user3));
+//			System.out.println("Database initialized");
+//		};
+//	}
 }
