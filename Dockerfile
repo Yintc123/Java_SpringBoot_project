@@ -1,8 +1,9 @@
 # FROM openjdk:11
 # COPY /target/HelloSpringBoot-0.0.1-SNAPSHOT.war HelloSpringBoot-0.0.1-SNAPSHOT.war
 # ENTRYPOINT ["java", "-jar", "HelloSpringBoot-0.0.1-SNAPSHOT.war"]
+# FROM openjdk:11
 
-FROM openjdk:11-jdk-alpine
+FROM openjdk:11.0.14.1-jre-slim-buster
 RUN mkdir /app
 RUN mkdir /app/ssl
 
