@@ -37,8 +37,8 @@ public class SecurityConfig {
 	
 	// 將回傳的method建立成元件
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http
+	public SecurityFilterChain securityFilterChain(HttpSecurity https) throws Exception {
+		https
 			.csrf().disable() // 跨站請求偽造 (Cross-site request forgery)，利用cookie帶的使用者使用者狀態攻擊
 			.authorizeRequests()
 				.antMatchers(HttpMethod.GET, "/").authenticated()
@@ -48,7 +48,7 @@ public class SecurityConfig {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("/login")
+				.loginPage("/login").permitAll()
 				.usernameParameter("email")
 				.loginProcessingUrl("/login")
 				.defaultSuccessUrl("/")
@@ -59,7 +59,7 @@ public class SecurityConfig {
 				.logoutSuccessUrl("/login")
 				.permitAll();
 		
-	        return http.build();
+	        return https.build();
 	}
 	
 	@Bean
