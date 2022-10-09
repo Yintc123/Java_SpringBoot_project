@@ -8,7 +8,7 @@ RUN mkdir /app
 RUN mkdir /app/ssl
 
 # 加入bash功能
-RUN apt-get add --no-cache bash
+RUN apt update && apt install bash
 COPY wait-for-it.sh /app/wait-for-it.sh
 RUN chmod +x /app/wait-for-it.sh
 COPY /target/HelloSpringBoot-0.0.1-SNAPSHOT.war /app/HelloSpringBoot-0.0.1-SNAPSHOT.war
