@@ -2,9 +2,17 @@
 # COPY /target/HelloSpringBoot-0.0.1-SNAPSHOT.war HelloSpringBoot-0.0.1-SNAPSHOT.war
 # ENTRYPOINT ["java", "-jar", "HelloSpringBoot-0.0.1-SNAPSHOT.war"]
 
-FROM openjdk:11
+FROM openjdk:11-jdk-alpine
 RUN mkdir /app
 RUN mkdir /app/ssl
-COPY /target/ /app
+
+# 加入bash功能
+RUN apk add --no-cache bash
+COPY wait-for-it.sh /app/wait-for-it.sh
+RUN chmod +x /app/wait-for-it.sh
+COPY /target/HelloSpringBoot-0.0.1-SNAPSHOT.war /app/HelloSpringBoot-0.0.1-SNAPSHOT.war
+
+# COPY /target/ /app
 WORKDIR /app
-ENTRYPOINT ["java", "-jar", "HelloSpringBoot-0.0.1-SNAPSHOT.war"]
+# ENTRYPOINT ["java", "-jar", "HelloSpringBoot-0.0.1-SNAPSHOT.war"]
+CMD ["wait-for-it.sh", "mysqldb:3307", "--", "java", "-jar", "HelloSpringBoot-0.0.1-SNAPSHOT.war"]

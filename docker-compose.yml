@@ -1,7 +1,7 @@
 version: "3"
 services:
   springboot:
-    image: springboot
+    image: yintc/sp
     restart: always
     build: .
     ports:
@@ -10,6 +10,8 @@ services:
       - springboot-mysql
     depends_on:
       - mysqldb
+    volumes:
+      - /etc/ssl:/app/ssl
     environment:
       DB_HOST: mysqldb
       DB_NAME: spring_boot
@@ -27,6 +29,7 @@ services:
     environment:
       MYSQL_DATABASE: spring_boot
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_PASSWORD: password
+#      MYSQL_PASSWORD: password
+#      MYSQL_USER: root
 networks:
   springboot-mysql:
