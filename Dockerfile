@@ -22,6 +22,6 @@
 
 # -----------------------RDS----------------------------
 FROM openjdk:11
-# RUN mkdir /ssl
+RUN mkdir /ssl
 COPY /target/HelloSpringBoot-0.0.1-SNAPSHOT.war HelloSpringBoot-0.0.1-SNAPSHOT.war
 ENTRYPOINT ["java", "-jar", "HelloSpringBoot-0.0.1-SNAPSHOT.war"]

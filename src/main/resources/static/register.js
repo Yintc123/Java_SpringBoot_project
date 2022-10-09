@@ -18,13 +18,15 @@ submit_button.addEventListener("click", ()=>{
 			email_message.style.display="block";
 			return;
 		}
-		location.href="http://localhost:5050/login";
+		// location.href="http://localhost:5050/login";
+		location.href="https://springbootpractice.yin888.info/login";
 	})
 })
 
 switch_button.addEventListener("click", ()=>{
 	console.log("switch!");
-	location.href="http://localhost:5050/login";
+	// location.href="http://localhost:5050/login";
+	location.href="https://springbootpractice.yin888.info/login";
 })
 
 let patch_button=document.querySelector("#patch");
