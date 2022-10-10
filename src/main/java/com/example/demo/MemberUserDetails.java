@@ -10,6 +10,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class MemberUserDetails implements UserDetails {
 	
+	// 使用者資訊介面，預設 User 實作 UserDetails 介面以儲存使用者資訊，也可自行實作
+	// https://www.youtube.com/watch?v=n2sH5-Vko1M
+	
 	private Member user;
 	
 	public MemberUserDetails(Member user) {

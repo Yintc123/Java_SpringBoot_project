@@ -28,7 +28,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.AuthorizationFilter;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
-
+//https://www.youtube.com/watch?v=ErwPP7xLwDY
 //若要自定義登入邏輯需繼承WebSecurityConfiguration
 @Configuration // 專門讀取環境參數的類別
 @EnableWebSecurity // 啟用Spring Security所需的各項配置
@@ -67,6 +67,7 @@ public class SecurityConfig {
 		return new MemberUserDetailsService();
 	}
 	
+	// 一定要透過 @bean 注入密碼演算的實例
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();

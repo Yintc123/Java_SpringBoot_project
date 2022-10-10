@@ -7,7 +7,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class MemberUserDetailsService implements UserDetailsService {
 
-	// UserDetailsService載入使用者資訊的一個組件
+	// UserDetailsService載入使用者資訊的一個組件，實作使用者登入驗證邏輯
+	// https://www.youtube.com/watch?v=n2sH5-Vko1M
 	
 	@Autowired
 	private MemberRepo repo;
