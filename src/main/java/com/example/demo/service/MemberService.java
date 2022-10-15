@@ -1,8 +1,14 @@
-package com.example.demo;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.example.demo.MemberQueryParameter;
+import com.example.demo.Role;
+import com.example.demo.entity.Member;
+import com.example.demo.exception.UnprocessableEntityException;
+import com.example.demo.repository.MemberRepo;
 
 // 負責資料處理的業務邏輯層
 @Service

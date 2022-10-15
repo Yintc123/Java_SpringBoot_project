@@ -44,7 +44,7 @@
 //        if (optionalDecodedJWT.isPresent()) {
 //            Authentication authentication = new JwtAuthentication(optionalDecodedJWT.get());
 // 
-//            // 这里可以检查 JWT token 是否过期，issuer 等来设置 setAuthenticated(true/false)
+//            // 这里可以检查 JWT token 是否過期，issuer 等来設置 setAuthenticated(true/false)
 // 
 //            SecurityContextHolder.getContext().setAuthentication(authentication);
 //        } else {

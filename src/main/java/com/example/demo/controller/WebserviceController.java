@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +16,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.MemberQueryParameter;
+import com.example.demo.entity.Member;
+import com.example.demo.exception.UnprocessableEntityException;
+import com.example.demo.repository.MemberRepo;
+import com.example.demo.service.MemberService;
 
 @SpringBootApplication(exclude = UserDetailsServiceAutoConfiguration.class)
 @RestController

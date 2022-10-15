@@ -8,6 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.demo.entity.Member;
+
 public class MemberUserDetails implements UserDetails {
 	
 	// 使用者資訊介面，預設 User 實作 UserDetails 介面以儲存使用者資訊，也可自行實作

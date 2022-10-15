@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +28,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.AuthorizationFilter;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
+import com.example.demo.service.MemberUserDetailsService;
+
 //https://www.youtube.com/watch?v=ErwPP7xLwDY
 //若要自定義登入邏輯需繼承WebSecurityConfiguration
 @Configuration // 專門讀取環境參數的類別
@@ -48,7 +50,8 @@ public class SecurityConfig {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("https://springbootpractice.yin888.info/login").permitAll()
+//				.loginPage("https://springbootpractice.yin888.info/login").permitAll()
+				.loginPage("/login").permitAll()
 				.usernameParameter("email")
 				.loginProcessingUrl("/login")
 				.defaultSuccessUrl("/")
@@ -56,7 +59,8 @@ public class SecurityConfig {
 				.and()
 			.logout()
 				.logoutUrl("/logout")
-				.logoutSuccessUrl("https://springbootpractice.yin888.info/login")
+//				.logoutSuccessUrl("https://springbootpractice.yin888.info/login")
+				.logoutSuccessUrl("/login")
 				.permitAll();
 		
 	        return https.build();
