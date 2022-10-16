@@ -25,8 +25,8 @@ let switch_button=document.querySelector("#switch_button");
 
 switch_button.addEventListener("click", ()=>{
 	console.log("switch!");
-	// location.href="http://localhost:5050/register";
-	location.href="https://springbootpractice.yin888.info/register";
+	 location.href="http://localhost:5050/register";
+//	location.href="https://springbootpractice.yin888.info/register";
 })
 
 //let patch_button=document.querySelector("#patch");

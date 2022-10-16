@@ -18,7 +18,7 @@ public class MemberUserDetailsService implements UserDetailsService {
 	private MemberRepo repo;
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public MemberUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		//查詢使用者資訊UserDetails，然後比對使用者資訊與輸入的密碼是否相同來驗證是否為合法的使用者
 		

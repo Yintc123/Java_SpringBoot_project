@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.auth;
 
 import javax.validation.constraints.NotBlank;
 
