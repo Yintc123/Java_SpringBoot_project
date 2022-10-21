@@ -1,5 +1,6 @@
 console.log("hello from js");
 
+let orders_button=document.querySelector("#orders_button");
 let stock_button=document.querySelector("#stock_button");
 let tour_button=document.querySelector("#tour_button");
 let mb_button=document.querySelector("#mb_button");
@@ -51,3 +52,21 @@ mb_button.addEventListener("click", ()=>{
 		p_stock[i].style.display=status;
 	}
 })
+
+let flag_orders_project=0;
+orders_button.addEventListener("click", ()=>{
+	let p_stock=document.querySelectorAll(".orders_hide");
+	//console.log(p_stock);
+	let status="block";
+	if(flag_orders_project != 0){
+		status="none";
+		flag_orders_project = 0;
+	}else{
+		flag_orders_project = 1;
+	}
+	for(let i=0;i<p_stock.length;i++){
+		p_stock[i].style.display=status;
+	}
+})
+
+

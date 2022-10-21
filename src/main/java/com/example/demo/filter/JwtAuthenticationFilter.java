@@ -92,6 +92,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     	
     	System.out.println("exit if condition");
     	
+    	// 表示繼續執行下一個Filter，並且把Reques/Response傳下去
     	chain.doFilter(request, response);
     	
     }
